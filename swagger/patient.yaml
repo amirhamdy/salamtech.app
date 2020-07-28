@@ -1,0 +1,85 @@
+paths:
+  /patient/emr/add:
+    post:
+      tags:
+        - Patient Profile
+      name: Add EMR To Patient
+      summary: Add EMR To Patient
+      security:
+        - Bearer: []
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              patientId:
+                type: string
+                example: '5f0cd03f6dde010c401b765a'
+              report:
+                type: string
+                example: 'report example'
+              prescription:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: 'Medicine Name'
+                  description:
+                    type: string
+                    example: '3 times per day'
+              documents:
+                type: object
+                example: ['images/1.png', 'images/2.png']
+              doctor:
+                type: string
+                example: '5f0cd03f6dde010c401b765a'
+      responses:
+        200:
+          description: Added successfully
+        400:
+          description: error
+
+  /patient/emr/edit:
+    post:
+      tags:
+        - Patient Profile
+      name: Add EMR To Patient
+      summary: Add EMR To Patient
+      security:
+        - Bearer: []
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              patientId:
+                type: string
+                example: '5f0cd03f6dde010c401b765a'
+              emr:
+                type: object
+                properties:
+                  report:
+                    type: string
+                    example: 'report example'
+                  prescription:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        example: 'Medicine Name'
+                      description:
+                        type: string
+                        example: '3 times per day'
+                  documents:
+                    type: object
+                    example: ['images/1.png', 'images/2.png']
+                  doctor:
+                    type: string
+                    example: '5f0cd03f6dde010c401b765a'
+      responses:
+        200:
+          description: Added successfully
+        400:
+          description: error

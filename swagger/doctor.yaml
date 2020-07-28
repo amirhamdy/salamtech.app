@@ -1,0 +1,14 @@
+paths:
+  /doctor/top:
+    get:
+      tags:
+        - Doctor Profile
+      name: Get Top Doctors
+      summary: Get Top Doctors
+      security:
+        - Bearer: []
+      responses:
+        200:
+          description: Top Doctors successfully
+        400:
+          description: error
